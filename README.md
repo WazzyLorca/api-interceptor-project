@@ -81,7 +81,7 @@ try:
     print(json.dumps(response.json(), indent=2))
 except json.JSONDecodeError:
     print(response.text)
-
+```
 
 ### Disclaimer
 
