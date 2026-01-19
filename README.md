@@ -21,9 +21,9 @@ Analyze network traffic and understand how authentication works under the hood. 
 
 ## The Grand Finale: The Script in Action
 
-Python script sends the login request off to Discord and gets a proper response back. 
+The Python script successfully replicates the client's API call, triggering a real-world security response from Discord's servers. 
 
-![API Replicator Demonstration](account-compromised.JPG)
+![API Replicator Demonstration](assets/account-compromised.JPG)
 
 ---
 
@@ -43,7 +43,7 @@ Instead of a simple "success" or "wrong password" message, the script got a very
 
 The `ACCOUNT_COMPROMISED_RESET_PASSWORD` error code is brilliant. It shows that Discord's security systems correctly identified the login attempt from my script as "suspicious" because it was slightly different from a real client. As a precaution, it blocked the login and triggered a security alert, which even resulted in a real email.This was a real-world example of an anti-abuse system in action.
 
-![Discord API Response](security-team-discord.JPG)
+![Discord API Response](assets/security-team-discord.JPG)
 
 ### Part 3: Building the Tool (The Python Script)
 
@@ -81,6 +81,11 @@ try:
     print(json.dumps(response.json(), indent=2))
 except json.JSONDecodeError:
     print(response.text)
+
+
+### Disclaimer
+
+This project was conducted for purely educational purposes to understand API authentication and network security. It is not intended to be used for any malicious activity or to violate Discord's Terms of Service.
 
 What I Reckon in the End
 
